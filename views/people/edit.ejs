@@ -1,8 +1,18 @@
 <!doctype html>
 <html>
   <head>
+    <title>Edit Person</title>
   </head>
   <body>
-
+        <p> ID = <%= person.id %> : <%= person.firstname %> <%= person.lastname %></p><br>
+        <form method="post" action="/people/:id?_method=put">
+          <input type="text" value="<%= person.firstname %>" name="firstname">
+          <input type="text" value="<%= person.lastname %>" name="lastname"><br>
+          <input type="hidden" value="<%=person.id%>" name='id'>
+          <input type="submit" value="Save Changes">
+        </form>
+        <form action="/people">
+          <button>Cancel</button>
+        </form>
   </body>
 </html>
