@@ -38,8 +38,12 @@ app.get("/people", function(req, res){
 });
 
 app.get("/people/new", function(req, res){
-  res.render("people/new")
+  res.render("people/new");
 });
+
+app.get("/people/saved", function(req, res) {
+  res.render("people/saved");
+})
 
 app.get("/people/:id", function(req, res){
   person = findPersonById(req.params.id);
@@ -60,13 +64,13 @@ app.post("/people", function(req, res){
       console.log("res.rows",res.rows[0]);
     }
   });
-  res.redirect("/people");
+  res.redirect("/people/saved");
 });
 
 app.delete("/people/:id", function(req, res){
   person = findPersonById(req.params.id);
   person.destroy();
-  res.redirect("/people");
+  res.redirect("/people/saved");
 });
 
 app.put("/people/:id", function(req, res){
@@ -81,7 +85,7 @@ app.put("/people/:id", function(req, res){
       console.log(res.rows);
     }
   });
-  res.redirect("/people");
+  res.redirect("/people/saved");
 });
 
 app.listen(3000, function(){

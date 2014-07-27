@@ -28,4 +28,6 @@ Models.Person = Person;
 //   }
 // });
 
+// Models.Person.destroy();
+
 module.exports = Models;

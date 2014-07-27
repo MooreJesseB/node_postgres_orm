@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <title>People Index</title>
+  </head>
+  <body>
+    People Index <br>
+    <form action="/people/new">
+      <input type="submit" value="Create New Person">
+    </form>
+    <ul>
+      <% people.forEach(function(person){ %>
+        <li><a href="/people/<%=person.id%>"> ID = <%= person.id %> : <%= person.firstname %> <%= person.lastname %></a></li><br>
+      <% }) %>
+    </ul>
+  </body>
+</html>

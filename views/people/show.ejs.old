@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Show Person</title>
+  </head>
+  <body>
+    <li> ID = <%= person.id %> : <%= person.firstname %> <%= person.lastname %></li><br>
+    <form action="/people/<%=person.id%>/edit">
+      <button>Edit</button>
+    </form>
+    <form method="post" action="/people/<%=person.id%>?_method=delete">
+      <button type="submit">Delete</button>
+    </form>
+  </body>
+</html>
